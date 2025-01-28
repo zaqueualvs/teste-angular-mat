@@ -1,0 +1,21 @@
+<mat-card>
+  <section class="file-1">
+    <input type="file" #fileInput1 style="display: none" [formControl]="fileUpload1"/>
+    <button color="secondary" mat-raised-button (click)="fileInput1.click()">
+      <mat-icon>upload_file</mat-icon>
+      Enviar arquivo
+    </button>
+    <p>Arquivo 1 {{ fileUpload1.value }}</p>
+  </section>
+
+  <section class="file-2">
+    <input type="file" #fileInput style="display: none" [formControl]="fileUpload2" [accept]="'.csv'"/>
+    <button mat-menu-item (click)="fileInput.click()">Criar Variáveis (CSV)</button>
+    <p>Arquivo 2 {{ fileUpload2.value }}</p>
+
+    <input type="file" #questionInput style="display: none" [formControl]="fileUpload3" [accept]="'.csv'"/>
+    <button mat-menu-item (click)="questionInput.click()">Criar Perguntas (CSV)</button>
+    <p>Arquivo 3 {{ fileUpload3.value }}</p>
+
+  </section>
+</mat-card>
